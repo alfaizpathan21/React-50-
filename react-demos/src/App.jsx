@@ -1,21 +1,54 @@
+import UserStatus from "./components/UserStatus";
+import Weather from "./components/Weather";
 
-import Footer from "./components/Footer";
-import Greeting from "./components/Greeting";
-import Header from "./components/Header";
-import JSXRules from "./components/JSXRules";
-import List from "./components/List";
-import MainContent from "./components/MainContent";
-import Person from "./components/Person";
-import Product from "./components/Product";
-import ProductInfo from "./components/ProductInfo";
-import UserList from "./components/UserList";
+ 
+
+
+const ValidPassword =()=> <h1> Valid Password</h1>
+ const InvalidPassword =()=> <h1> Invalid Password</h1>
+
+ const  Cart =()=>{
+  const items =[ "wirless earbuds","power bank"," New SSD","HOddies" ];
+
+  return(
+    <div>
+      <h1>Cart </h1>
+  {items.length >0 && <h2> you have {items.length} items in your cart</h2>}
+
+<ul>
+  <h4 >Products</h4>
+  {items.map(items=>(
+    <li key={Math.random()}>{items}</li>
+  ))}
+</ul>
+    </div>
+  )
+ }
+
+ const Password=({isvalid})=>{
+ // if(isvalid){
+  //  return<ValidPassword/>
+  //}
+ // return <InvalidPassword/>
+
+ return isvalid? <ValidPassword/>:<InvalidPassword/>;
+ }
 
 const App = () => {
   return(
 
  <div>
-<Product name="Laptop" price="$999"/>
-<Person name="John Doe" age={30}/>
+  <Weather temps={247}/>
+
+  <UserStatus loggedIn={true} isAdmin={false} />
+<Cart/>
+  <Password isvalid={false}/>
+
+  
+
+  
+  
+ 
  </div>
    
  
