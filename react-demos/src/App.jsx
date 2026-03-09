@@ -1,50 +1,24 @@
-import { TiShoppingCart } from "react-icons/ti";
-import StyledCard from "./components/StyledCard";
-import ProfileCard from "./components/ProfileCard";
-import IconComponent from "./components/IconComponent";
-
-const Button =()=>{
-  const hnadleclick =()=>{ console.log(Math.round(Math.random()*101));
-  }
-  return <button onClick={hnadleclick}>Click</button>
-} 
-
-
-const Copy =()=>{
-
-  const copyHandler=()=>{
-    console.log("stop copying my content")
-  }
-  
-  return(
-    
-    <p onCopy={copyHandler}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem ad doloribus voluptatum odit, itaque, sed ea non cupiditate enim, autem aliquam. Blanditiis totam quis consequatur magni quia vero doloremque quisquam!</p>
-  )
-}
-
+ import React, { useState } from 'react'
+ 
  const App = () => {
-  return(
+
+  const [friend,setFriend]=useState(["omkar","hpn"])
+  
+  const addonefriend=()=>setFriend([...friend,"alfaiz"])
+  const removefriend=()=>setFriend(friend.filter((f)=>f!="hpn"))
+  return (
+      <section>
+        {friend.map(f=>(
+          <li key={Math.random()}>{f}</li>
+        ))}
+
+
+<button onClick={addonefriend}>Add new friend</button>
+<button onClick={removefriend}>remove friend</button>
+        
+      </section>
+   )
+ }
  
-<section>
-   
-  <Copy/>
-</section>
-
-
-
-  // <section>
-  // <TiShoppingCart />
-  // <StyledCard/>
-  // <ProfileCard/>
-  // <IconComponent/>
-  // </section>
-   
+ export default App
  
-  
-
-  )
-  
-  
-}
-
-export default App;
