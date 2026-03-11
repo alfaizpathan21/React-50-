@@ -1,6 +1,7 @@
  import React, { useState } from 'react'
 import ComponentOne from './components/ComponentOne'
 import ComponentTwo from './components/ComponentTwo'
+import TO_DO from './components/ToDo'
  
  const App = () => {
   const [count,setCount]=useState(0)
@@ -11,10 +12,8 @@ import ComponentTwo from './components/ComponentTwo'
     
     <section>
 
-      <ComponentOne count={count} onclickHandler={()=> setCount(count+1)} />
-      <ComponentTwo count={count} onclickHandler={()=> setCount(count-1)}/>
-
-
+     
+      <TO_DO />
 
     </section>
    )
