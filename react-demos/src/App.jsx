@@ -1,4 +1,5 @@
 import  Profile from './components/Profile'
+import ShoppingList from './components/ShoppingList'
  
  const App = () => {
    
@@ -8,8 +9,9 @@ import  Profile from './components/Profile'
     
     
     <section>
-      <Profile/>
+      {/* <Profile/> */}
      
+     <ShoppingList/>
   
 
     </section>
