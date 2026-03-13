@@ -1,19 +1,16 @@
- import React, { useState } from 'react'
-import ComponentOne from './components/ComponentOne'
-import ComponentTwo from './components/ComponentTwo'
-import TO_DO from './components/ToDo'
+import  Profile from './components/Profile'
  
  const App = () => {
-  const [count,setCount]=useState(0)
+   
   
   
    return (
     
     
     <section>
-
+      <Profile/>
      
-      <TO_DO />
+  
 
     </section>
    )
