@@ -1,20 +1,22 @@
-import  Profile from './components/Profile'
-import ShoppingList from './components/ShoppingList'
+ import React, { useEffect, useState } from 'react'
  
  const App = () => {
-   
+
+  const [value,setValue]=useState(0)
+
+
+  useEffect(()=>{
+    console.log("call useEffect")
+    document.title=`Increment ${value}`
+  },[' '])
+  
   
   
    return (
-    
-    
-    <section>
-      {/* <Profile/> */}
-     
-     <ShoppingList/>
-  
-
-    </section>
+     <div>
+       <h2>{value}</h2>
+       <button onClick={()=>setValue(value+1)}>click me  </button>
+     </div>
    )
  }
  
